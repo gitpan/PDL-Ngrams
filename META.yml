@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               PDL-Ngrams
-version:            0.03
+version:            0.04
 abstract:           N-Gram utilities for PDL
 author:
     - Bryan Jurish <moocow@ling.uni-potsdam.de>
@@ -12,7 +12,7 @@ build_requires:
     ExtUtils::MakeMaker:  0
 requires:
     PDL:                2.4.2
-    PDL::VectorValued:  ~
+    PDL::VectorValued:  0
 no_index:
     directory:
         - t
