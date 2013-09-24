@@ -1,23 +1,24 @@
 --- #YAML:1.0
 name:               PDL-Ngrams
-version:            0.04_002
+version:            0.05
 abstract:           N-Gram utilities for PDL
 author:
-    - Bryan Jurish <moocow@ling.uni-potsdam.de>
+    - Bryan Jurish <moocow@cpan.org>
 license:            unknown
 distribution_type:  module
 configure_requires:
-    ExtUtils::MakeMaker:  0
+    PDL:                0
+    PDL::VectorValued:  0
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    PDL:                2.4.2
+    PDL:                0
     PDL::VectorValued:  0
 no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.55_02
+generated_by:       ExtUtils::MakeMaker version 6.57_05
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4

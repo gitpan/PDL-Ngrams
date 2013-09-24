@@ -13,7 +13,7 @@ use DynaLoader;
 
 
 
-   $PDL::Ngrams::Utils::VERSION = 0.04;
+   $PDL::Ngrams::Utils::VERSION = 0.05;
    @ISA    = ( 'PDL::Exporter','DynaLoader' );
    push @PDL::Core::PP, __PACKAGE__;
    bootstrap PDL::Ngrams::Utils $VERSION;
@@ -70,7 +70,7 @@ PDL::Ngrams::ngutils - Basic N-Gram utilities for PDL: low-level utilities
 
 =for sig
 
-  Signature: (toks(NToks); int boffsets(NBlocks); delims(NDelims); [o]dtoks(NDToks))
+  Signature: (toks(NToks); indx boffsets(NBlocks); delims(NDelims); [o]dtoks(NDToks))
 
 Add block-delimiters to a raw token vector
 
@@ -97,7 +97,7 @@ It will set the bad-value flag of all output piddles if the flag is set for any 
 
 sub PDL::ng_delimit {
   my ($toks,$boffsets,$delims,$dtoks,$ndtoks) = @_;
-  barf('Usage: ng_delimit(toks(NToks), int boffsets(NBlocks), delims(NDelims), [o]dtoks(NDToks), ndtoks=>NDToks)')
+  barf('Usage: ng_delimit(toks(NToks), indx boffsets(NBlocks), delims(NDelims), [o]dtoks(NDToks), ndtoks=>NDToks)')
     if (grep {!defined($_)} ($toks,$boffsets,$delims));
   ##
   ##-- basic data
@@ -130,7 +130,7 @@ sub PDL::ng_delimit {
 
 =for sig
 
-  Signature: (dtoks(NDToks); int boffsets(NBlocks); int NDelims(); [o]toks(NToks))
+  Signature: (dtoks(NDToks); indx boffsets(NBlocks); int NDelims(); [o]toks(NToks))
 
 Remove block-delimiters from a delimited token vector.
 
@@ -153,7 +153,7 @@ It will set the bad-value flag of all output piddles if the flag is set for any 
 
 sub PDL::ng_undelimit {
   my ($dtoks,$boffsets,$NDelims,$toks) = @_;
-  barf('Usage: ng_delimit(dtoks(NDToks), int boffsets(NBlocks), NDelims(), [o]toks(NToks))')
+  barf('Usage: ng_delimit(dtoks(NDToks), indx boffsets(NBlocks), NDelims(), [o]toks(NToks))')
     if (grep {!defined($_)} ($dtoks,$boffsets,$NDelims));
   ##
   ##-- $toks: maybe allocate
@@ -203,7 +203,7 @@ Probably many.
 
 =head1 AUTHOR
 
-Bryan Jurish E<lt>moocow@ling.uni-potsdam.deE<gt>
+Bryan Jurish E<lt>moocow@cpan.orgE<gt>
 
 =head2 Copyright Policy
 
