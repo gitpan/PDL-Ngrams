@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               PDL-Ngrams
-version:            0.05.001
+version:            0.05.002
 abstract:           N-Gram utilities for PDL
 author:
     - Bryan Jurish <moocow@cpan.org>
